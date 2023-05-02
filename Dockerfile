@@ -21,7 +21,8 @@ RUN apk update \
     && chown nginx:nginx ${DOCKAGE_WEBROOT_DIR} \
     && mv ${DOCKAGE_ETC_DIR}/sbin/* /sbin \
     && rm -rf /var/cache/apk/* ${DOCKAGE_ETC_DIR}/sbin ${DOCKAGE_WEBROOT_DIR}/* \
-    && ln -s /usr/sbin/php-fpm81 /usr/bin/php-fpm
+    && ln -s /usr/sbin/php-fpm81 /usr/bin/php-fpm \
+    && ln -s /etc/php81 /etc/php5
 
 EXPOSE 80/tcp 443/tcp
 
