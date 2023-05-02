@@ -22,7 +22,8 @@ RUN apk update \
     && mv ${DOCKAGE_ETC_DIR}/sbin/* /sbin \
     && rm -rf /var/cache/apk/* ${DOCKAGE_ETC_DIR}/sbin ${DOCKAGE_WEBROOT_DIR}/* \
     && ln -s /usr/sbin/php-fpm81 /usr/bin/php-fpm \
-    && ln -s /etc/php81 /etc/php5
+    && ln -s /etc/php81 /etc/php5 \
+    && ln -s /usr/sbin/php-fpm81 /usr/sbin/php5-fpm
 
 EXPOSE 80/tcp 443/tcp
 
