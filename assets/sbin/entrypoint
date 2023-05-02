@@ -33,7 +33,7 @@ case ${1} in
         cat ${DOCKAGE_ETC_DIR}/runtime/configs/nginx/default.conf | \
         sed -e "s#{{NGINX_PORT}}#$NGINX_PORT#g" \
             -e "s#{{NGINX_SERVER_NAME}}#$NGINX_SERVER_NAME#g" \
-            > /etc/nginx/sites-enabled/default.conf
+            > /etc/nginx/sites-available/default.conf
 
         exec /sbin/runit-init
         ;;
